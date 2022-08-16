@@ -35,10 +35,6 @@ RUN apt update \
     python3 \
     python3-pip
 
-# remove cache files
-RUN apt-get autoremove -y && apt-get clean && \
-    rm -rf /usr/local/src/*
-
 COPY ./requirements.txt /tmp/reqirements.txt
 
 RUN pip install --no-cache-dir --upgrade pip setuptools \
@@ -48,16 +44,6 @@ RUN pip install --no-cache-dir --upgrade pip setuptools \
 RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - \
     && sudo apt-get install -y nodejs
 
-## JupyterLabの拡張機能
-
-# 変数や行列の中身を確認
-RUN jupyter labextension install @lckr/jupyterlab_variableinspector@3.0.7
-
-# 自動整形
-RUN pip install autopep8 \
-    && pip install jupyterlab_code_formatter \
-    && jupyter labextension install @ryantam626/jupyterlab_code_formatter \
-    && jupyter serverextension enable --py jupyterlab_code_formatter
-
-# jupyter の config ファイルの作成
-RUN mkdir /mlws && echo "c.NotebookApp.notebook_dir = '/mlws' \n" | tee -a ${HOME}/.jupyter/jupyter_notebook_config.py
+# remove cache files
+RUN apt-get autoremove -y && apt-get clean && \
+    rm -rf /usr/local/src/*

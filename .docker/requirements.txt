@@ -1,0 +1,18 @@
+tensorflow
+numpy
+pandas
+scipy
+matplotlib
+torch
+torchvision
+
+
+# jupyterlab and extension
+jupyterlab
+jupyterlab_code_formatter
+black
+isort
+jupyterlab_widgets
+ipywidgets
+lckr-jupyterlab-variableinspector
+jupyterlab_tabnine
