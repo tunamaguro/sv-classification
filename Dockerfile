@@ -39,7 +39,7 @@ RUN apt update \
 RUN apt-get autoremove -y && apt-get clean && \
     rm -rf /usr/local/src/*
 
-COPY requirements.txt /tmp/reqirements.txt
+COPY ./requirements.txt /tmp/reqirements.txt
 
 RUN pip install --no-cache-dir --upgrade pip setuptools \
     && pip install --no-cache-dir -r /tmp/reqirements.txt
@@ -60,4 +60,4 @@ RUN pip install autopep8 \
     && jupyter serverextension enable --py jupyterlab_code_formatter
 
 # jupyter の config ファイルの作成
-# RUN mkdir /mlws && echo "c.NotebookApp.notebook_dir = '/mlws' \n" | tee -a ${HOME}/.jupyter/jupyter_notebook_config.py
+RUN mkdir /mlws && echo "c.NotebookApp.notebook_dir = '/mlws' \n" | tee -a ${HOME}/.jupyter/jupyter_notebook_config.py
