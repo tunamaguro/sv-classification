@@ -1,0 +1,17 @@
+{
+    "name": "sv-classification",
+    "dockerComposeFile": [
+        "compose.yaml"
+    ],
+    "service": "app",
+    "workspaceFolder": "/workspace",
+    "extensions": [
+        "ms-python.python"
+    ],
+    "runArgs": [
+        "--gpus",
+        "all",
+        "--shm-size",
+        "8gb"
+    ]
+}
