@@ -1,0 +1,11 @@
+{
+    "theme": "JupyterLab Dark",
+    "theme-scrollbars": false,
+    "overrides": {
+        "code-font-family": "FirgeNerd",
+        "code-font-size": "HackGenNerd",
+        "content-font-size1": null,
+        "ui-font-family": null,
+        "ui-font-size1": null
+    }
+}
