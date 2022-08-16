@@ -16,3 +16,6 @@ jupyterlab_widgets
 ipywidgets
 lckr-jupyterlab-variableinspector
 jupyterlab_tabnine
+# jupyterlab-kite
+jupyterlab_flake8
+flake8

@@ -35,14 +35,25 @@ RUN apt update \
     python3 \
     python3-pip
 
+
+# jupyter lab-kite
+# RUN cd && \
+#     wget https://linux.kite.com/dls/linux/current && \
+#     chmod 777 current && \
+#     sed -i 's/"--no-launch"//g' current > /dev/null && \
+#     ./current --install ./kite-installer
+
 COPY ./requirements.txt /tmp/reqirements.txt
 
 RUN pip install --no-cache-dir --upgrade pip setuptools \
     && pip install --no-cache-dir -r /tmp/reqirements.txt
 
 # nodejsの導入
-RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - \
+RUN curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash - \
     && sudo apt-get install -y nodejs
+
+# jupyter lab extension
+RUN jupyter labextension install @jupyterlab/toc
 
 # remove cache files
 RUN apt-get autoremove -y && apt-get clean && \

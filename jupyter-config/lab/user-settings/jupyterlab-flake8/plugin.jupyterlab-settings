@@ -1,0 +1,10 @@
+{
+    // Jupyterlab-Flake8
+    // jupyterlab-flake8:plugin
+    // Jupyterlab-Flake8 Linter settings.
+    // **********************************
+
+    // [missing schema title]
+    // Persistent internal terminal name. This is set automatically on each run
+    "terminal_name": "flake8term"
+}
