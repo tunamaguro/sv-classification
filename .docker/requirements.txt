@@ -1,10 +1,18 @@
+# tensorflow
 tensorflow
+pyyaml
+h5py
+seaborn
+keras-tuner
+
 numpy
 pandas
 scipy
 matplotlib
 torch
 torchvision
+torchaudio
+--extra-index-url https://download.pytorch.org/whl/cu116
 
 
 # jupyterlab and extension

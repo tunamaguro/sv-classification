@@ -21,6 +21,8 @@ services:
       - "NVIDIA_DRIVER_CAPABILITIES=all"
     deploy:
       resources:
+        limits:
+            memory: 4g
         reservations:
           devices:
             - capabilities:
