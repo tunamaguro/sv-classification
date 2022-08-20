@@ -13,6 +13,8 @@ torch
 torchvision
 torchaudio
 --extra-index-url https://download.pytorch.org/whl/cu116
+cython
+-e git+https://github.com/gautamchitnis/cocoapi.git@cocodataset-master#subdirectory=PythonAPI
 fastai
 
 
