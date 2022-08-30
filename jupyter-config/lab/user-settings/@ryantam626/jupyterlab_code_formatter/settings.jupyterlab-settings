@@ -12,7 +12,9 @@
     },
     "black": {
         "line_length": 88,
-        "string_normalization": true
+        "string_normalization": true,
+        "experimental_string_processing": false,
+        "magic_trailing_comma": true
     },
     "yapf": {
         "style_config": "google"

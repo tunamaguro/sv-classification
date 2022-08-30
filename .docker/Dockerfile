@@ -57,3 +57,8 @@ RUN jupyter labextension install  @jupyterlab/toc
 # remove cache files
 RUN apt-get autoremove -y && apt-get clean && \
     rm -rf /usr/local/src/*
+
+ARG UID=1000
+RUN useradd -m -u ${UID} docker
+
+USER docker
