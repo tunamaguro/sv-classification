@@ -3,6 +3,7 @@ services:
     build: 
       context: ./.docker
       dockerfile: Dockerfile
+    shm_size: 2gb
     entrypoint: >
       jupyter-lab
       --allow-root
