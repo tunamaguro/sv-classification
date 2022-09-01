@@ -4,6 +4,8 @@ pyyaml
 h5py
 seaborn
 keras-tuner
+imageio
+git+https://github.com/tensorflow/docs
 
 numpy
 pandas
@@ -12,6 +14,7 @@ matplotlib
 torch
 torchvision
 torchaudio
+torchinfo
 --extra-index-url https://download.pytorch.org/whl/cu116
 cython
 fastai

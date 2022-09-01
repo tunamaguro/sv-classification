@@ -40,16 +40,16 @@ RUN curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash - \
     && sudo apt-get install -y nodejs
 
 # jupyter lab-kite
-RUN cd && \
-    wget https://linux.kite.com/dls/linux/current && \
-    chmod 777 current && \
-    sed -i 's/"--no-launch"//g' current > /dev/null && \
-    ./current --install ./kite-installer
+# RUN cd ~/ && \
+#     wget https://linux.kite.com/dls/linux/current && \
+#     chmod 777 current && \
+#     sed -i 's/"--no-launch"//g' current > /dev/null && \
+#     ./current --install ./kite-installer
 
 COPY ./requirements.txt /tmp/reqirements.txt
 
-RUN pip install --no-cache-dir --upgrade pip setuptools \
-    && pip install --no-cache-dir -r /tmp/reqirements.txt
+RUN pip3 install --no-cache-dir --upgrade pip setuptools \
+    && pip3 install --no-cache-dir -r /tmp/reqirements.txt
 
 # jupyter lab extension
 RUN jupyter labextension install  @jupyterlab/toc
@@ -57,8 +57,3 @@ RUN jupyter labextension install  @jupyterlab/toc
 # remove cache files
 RUN apt-get autoremove -y && apt-get clean && \
     rm -rf /usr/local/src/*
-
-ARG UID=1000
-RUN useradd -m -u ${UID} docker
-
-USER docker
